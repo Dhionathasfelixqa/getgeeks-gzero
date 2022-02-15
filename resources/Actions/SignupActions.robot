@@ -43,7 +43,9 @@ Alert Spans Should Be
 
     FOR     ${span}     IN      @{spans}
 
-            ${text}                      Get Text        ${span}
-            Append To List              ${got_alerts}       ${text}
+            ${text}                  Get Text               ${span}
+            Append To List           ${got_alerts}          ${text}
 
     END
+    
+    Lists should be equal           ${expected_alerts}      ${got_alerts}    
